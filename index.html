@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satori | Master Your Mind</title>
+
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- App Container -->
+    <div id="app">
+
+        <!-- View: Splash / Intro -->
+        <section id="intro-view" class="view active-view">
+            <div class="content opacity-0" id="intro-content">
+                <h1 class="logo">Satori</h1>
+                <p class="subtitle">Mastery awaits in the silence.</p>
+                <button id="btn-enter" class="btn-primary">Begin Journey</button>
+            </div>
+        </section>
+
+        <!-- View: Mood Selection -->
+        <section id="mood-view" class="view hidden">
+            <h2>How is your spirit today?</h2>
+            <p class="subtitle" style="text-align: center;">Select a card to begin.</p>
+            <div class="mood-grid" id="mood-grid"></div>
+        </section>
+
+        <!-- View: Thought Dissolver -->
+        <section id="thought-view" class="view hidden">
+            <h2>Clear Your Mind</h2>
+            <p class="subtitle">What is weighing on you right now?</p>
+
+            <div class="thought-container">
+                <input type="text" id="thought-input" placeholder="Type a worry here..." autocomplete="off">
+                <button id="btn-dissolve" class="btn-primary" style="margin-top: 2rem;">Dissolve</button>
+            </div>
+
+            <div id="smoke-container"></div>
+
+            <button id="btn-skip-thought" class="btn-glass" style="margin-top: 4rem; opacity: 0.7;">Skip Ritual</button>
+        </section>
+
+        <!-- View: Meditation Session -->
+        <section id="session-view" class="view hidden">
+            <!-- Dynamic Background (Canvas/Video) -->
+            <div id="visualizer-container">
+                <canvas id="breath-canvas"></canvas>
+            </div>
+
+            <!-- UI Overlay -->
+            <div class="session-ui">
+                <div class="top-bar">
+                    <button id="btn-exit" class="icon-btn" aria-label="Exit">&times;</button>
+                    <div id="timer-display">10:00</div>
+                    <button id="btn-settings" class="icon-btn" aria-label="Settings">&#9881;</button>
+                </div>
+
+                <div class="center-instruction" id="breathing-text">
+                    Inhale
+                </div>
+
+                <div class="bottom-controls">
+                    <button id="btn-voice" class="btn-glass">Guide: Off</button>
+                    <button id="btn-audio-mix" class="btn-glass">Soundscape</button>
+                    <button id="btn-play-pause" class="btn-circle-play">&#9658;</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="js/breathing.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/voice.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
